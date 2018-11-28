@@ -22,6 +22,8 @@ The point class should adhere to the following UML diagram:
 
 ```text
 ----------------------
+Point
+----------------------
 - x: int
 - y: int
 ----------------------
@@ -47,3 +49,48 @@ public String toString() {
   return "somestring";
 }
 ```
+
+### LineSegment
+
+A `LineSegment` object consists of two points, a start and an end. This can be achieved by adding two attributes inside the class of type `Point`.
+
+Start by create a constructor that takes in the four coordinates as shown in the following UML diagram:
+
+```text
+----------------------
+LineSegment
+----------------------
+- start: Point
+- end: Point
+----------------------
++ LineSegment(xStart: int, yStart: int, xEnd: int, yEnd: int)
++ length(): double
++ slope(): double
++ toString(): String
+----------------------
+```
+
+You should also provide a method to calculate the length of the segment. This can be achieved by using the following formula:
+
+![Formula for distance between two point](img/distance_formula.png)
+
+<!-- Calculated @`http://latex.codecogs.com/svg.latex?d(start,end) = \sqrt{(x_{end}-x_{start})^{2} + (y_{end}-y_{start})^{2}}` -->
+
+Also provide a method that determines the slope of the segment (RICO). This can be achieved using the formula:
+
+![Formula for the slope of the segment between two point](img/slope_formula.png)
+
+<!-- Calculated @`http://latex.codecogs.com/svg.latex?m = \tan (\theta) = \frac{y_{end}-y_{start}}{x_{end}-x_{start}}` -->
+
+Last add a `toString()` method that returns a String with the following format of a LineSegment:
+
+```text
+Line starts @ [234, 22] and ends at [2, -13].
+Its length is 234.63 and it has a slope of 0.32.
+```
+
+You can format length and slope to have a fixed number of digits using the following code snippet: `String fixed = String.format("%1$,.2f", 88.1234567);` Use this only inside of the `toString()` method.
+
+So `System.out.println(String.format("%1$,.2f", 88.1234567));` would result in `88.12`.
+
+As can be seen from the UML diagram, you do not need to provide setters and getters for the points.
