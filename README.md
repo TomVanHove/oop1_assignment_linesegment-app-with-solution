@@ -94,3 +94,13 @@ You can format length and slope to have a fixed number of digits using the follo
 So `System.out.println(String.format("%1$,.2f", 88.1234567));` would result in `88.12`.
 
 As can be seen from the UML diagram, you do not need to provide setters and getters for the points.
+
+## Solution
+
+The solution to this assignment can be found in the solution branch. Clone the repo and checkout the branch.
+
+```shell
+git clone https://github.com/oop-solutions-and-demos/oop1_assignment_linesegment-app-with-solution.git
+cd oop1_assignment_linesegment-app-with-solution
+git checkout solution
+```
